@@ -646,7 +646,6 @@ def save_backtest_plot(bt: RSIAveragingBacktestStandalone, filename: str = "back
     axes[0].set_ylabel("Equity (USDT)")
     axes[0].legend(loc="upper left")
 
-    axes[1].plot(eq["timestamp"], eq["price"], label="Price", linewidth=1.0, color="#2b8cbe")
     if "ema200" in eq.columns:
         axes[1].plot(eq["timestamp"], eq["ema200"], label="4h EMA200", color="#d95f02", linewidth=1.0)
 
@@ -657,24 +656,30 @@ def save_backtest_plot(bt: RSIAveragingBacktestStandalone, filename: str = "back
             axes[1].scatter(
                 longs["entry_time"],
                 longs["avg_entry"],
-                s=12,
-                alpha=0.6,
+                s=24,
+                alpha=0.95,
                 label="LONG entry",
                 marker="^",
                 color="#1b9e77",
+                edgecolors="#0a3d2a",
+                linewidths=1.0,
+                zorder=5,
             )
         if not shorts.empty:
             axes[1].scatter(
                 shorts["entry_time"],
                 shorts["avg_entry"],
-                s=12,
-                alpha=0.6,
+                s=24,
+                alpha=0.95,
                 label="SHORT entry",
                 marker="v",
                 color="#d62728",
+                edgecolors="#5a1010",
+                linewidths=1.0,
+                zorder=5,
             )
 
-    axes[1].set_title("Price, 4h EMA200 and Entries")
+    axes[1].set_title("4h EMA200 and Entries")
     axes[1].set_ylabel("Price (USDT)")
     axes[1].set_xlabel("Time")
     axes[1].legend(loc="upper left")
