@@ -1,0 +1,7 @@
+pandas
+numpy
+binance-connector
+python-dotenv
+loguru
+matplotlib
+requests
