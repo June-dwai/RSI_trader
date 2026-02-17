@@ -657,6 +657,21 @@ def save_backtest_plot(bt: RSIAveragingBacktestStandalone, filename: str = "back
     plt.close()
 
 
+def save_equity_only_plot(bt: RSIAveragingBacktestStandalone, filename: str = "backtest_equity_only.png") -> None:
+    eq = pd.DataFrame(bt.equity_curve)
+    if eq.empty:
+        return
+
+    plt.figure(figsize=(12, 8))
+    plt.plot(eq["timestamp"], eq["equity"], label="Equity", linewidth=1.5)
+    plt.title("Backtest RSI Averaging - Equity Only")
+    plt.xlabel("Time")
+    plt.ylabel("Equity (USDT)")
+    plt.tight_layout()
+    plt.savefig(filename, dpi=300, bbox_inches="tight")
+    plt.close()
+
+
 def summarize(bt: RSIAveragingBacktestStandalone):
     eq = pd.DataFrame(bt.equity_curve)
     tr = pd.DataFrame(bt.trades)
@@ -684,6 +699,7 @@ def main():
     metrics = summarize(bt)
     save_backtest_plot(bt, filename="backtest_real_results.png")
     save_backtest_plot(bt, filename="backtest_Real_results.png")
+    save_equity_only_plot(bt, filename="backtest_real_equity_only.png")
 
     print(f"symbol={SYMBOL}")
     print(f"period={metrics['period_start']} ~ {metrics['period_end']}")
