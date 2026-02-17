@@ -639,34 +639,48 @@ def save_backtest_plot(bt: RSIAveragingBacktestStandalone, filename: str = "back
     if eq.empty:
         return
 
-    plt.figure(figsize=(12, 8))
-    plt.plot(eq["timestamp"], eq["equity"], label="Equity")
+    fig, axes = plt.subplots(2, 1, figsize=(12, 10), sharex=True, gridspec_kw={"height_ratios": [2, 1]})
+
+    axes[0].plot(eq["timestamp"], eq["equity"], label="Equity", linewidth=1.1)
+    axes[0].set_title("Backtest RSI Averaging - Equity")
+    axes[0].set_ylabel("Equity (USDT)")
+    axes[0].legend(loc="upper left")
+
+    axes[1].plot(eq["timestamp"], eq["price"], label="Price", linewidth=1.0, color="#2b8cbe")
+    if "ema200" in eq.columns:
+        axes[1].plot(eq["timestamp"], eq["ema200"], label="4h EMA200", color="#d95f02", linewidth=1.0)
+
     if not tr.empty:
         longs = tr[tr["side"] == "LONG"]
         shorts = tr[tr["side"] == "SHORT"]
         if not longs.empty:
-            plt.scatter(longs["entry_time"], longs["avg_entry"], s=10, alpha=0.5, label="LONG entry")
+            axes[1].scatter(
+                longs["entry_time"],
+                longs["avg_entry"],
+                s=12,
+                alpha=0.6,
+                label="LONG entry",
+                marker="^",
+                color="#1b9e77",
+            )
         if not shorts.empty:
-            plt.scatter(shorts["entry_time"], shorts["avg_entry"], s=10, alpha=0.5, label="SHORT entry")
-    plt.title("Backtest RSI Averaging")
-    plt.xlabel("Time")
-    plt.ylabel("Equity (USDT)")
-    plt.legend()
-    plt.tight_layout()
-    plt.savefig(filename, dpi=300, bbox_inches="tight")
-    plt.close()
+            axes[1].scatter(
+                shorts["entry_time"],
+                shorts["avg_entry"],
+                s=12,
+                alpha=0.6,
+                label="SHORT entry",
+                marker="v",
+                color="#d62728",
+            )
 
+    axes[1].set_title("Price, 4h EMA200 and Entries")
+    axes[1].set_ylabel("Price (USDT)")
+    axes[1].set_xlabel("Time")
+    axes[1].legend(loc="upper left")
 
-def save_equity_only_plot(bt: RSIAveragingBacktestStandalone, filename: str = "backtest_equity_only.png") -> None:
-    eq = pd.DataFrame(bt.equity_curve)
-    if eq.empty:
-        return
-
-    plt.figure(figsize=(12, 8))
-    plt.plot(eq["timestamp"], eq["equity"], label="Equity", linewidth=1.5)
-    plt.title("Backtest RSI Averaging - Equity Only")
-    plt.xlabel("Time")
-    plt.ylabel("Equity (USDT)")
+    axes[0].grid(True, alpha=0.2)
+    axes[1].grid(True, alpha=0.2)
     plt.tight_layout()
     plt.savefig(filename, dpi=300, bbox_inches="tight")
     plt.close()
@@ -698,8 +712,6 @@ def main():
     bt = run_baseline_ema200()
     metrics = summarize(bt)
     save_backtest_plot(bt, filename="backtest_real_results.png")
-    save_backtest_plot(bt, filename="backtest_Real_results.png")
-    save_equity_only_plot(bt, filename="backtest_real_equity_only.png")
 
     print(f"symbol={SYMBOL}")
     print(f"period={metrics['period_start']} ~ {metrics['period_end']}")
