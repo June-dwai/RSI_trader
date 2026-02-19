@@ -1,0 +1,2 @@
+period_start,period_end,final_equity,total_return_pct,cagr_pct,max_drawdown_pct,calmar_ratio,trades,long_trades,short_trades,win_rate_pct,long_win_rate_pct,short_win_rate_pct,profit_factor,avg_holding_hours
+2022-01-01 03:20:00,2026-02-12,27950.29873271394,2695.029873271394,124.76367963290818,68.13628282936308,1.83109019823344,664,598,66,92.46987951807229,99.83277591973244,25.757575757575758,2.93274167298082,69.53119979919678

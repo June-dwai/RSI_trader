@@ -1,0 +1,2 @@
+bars_total,hedge_on_ratio_pct,net_long_ratio_pct,net_short_ratio_pct,bearish_bars,bullish_bars,bearish_hedge_on_ratio_pct,bearish_positive_net_ratio_pct,entry_condition_true,blocked_by_ema_touch,blocked_by_cooldown,executed_long_entries
+2162314,47.31685592379275,47.220570185458726,15.031443166903605,1073339,1088975,95.32300605866367,0.0,31914,1215,2365,1819

@@ -1,0 +1,123 @@
+study,source_file,symbol,case,final_equity,mdd_pct,mdd_column,equity_rank,mdd_rank,rank_sum,combined_rank
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_daily_dca.csv,BTCUSDT,entry_scale=0.8,35093521.07880991,92.41293800807333,strategy_nav_max_drawdown_pct,1,120,121,60
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_daily_dca.csv,BTCUSDT,entry_scale=0.7,24304359.76164538,85.51882508192409,strategy_nav_max_drawdown_pct,2,113,115,53
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_daily_dca.csv,BTCUSDT,entry_scale=0.6,16358688.933106927,77.24774779628443,strategy_nav_max_drawdown_pct,3,100,103,36
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_daily_dca.csv,BTCUSDT,entry_scale=0.5,10800761.755920917,67.60557709024897,strategy_nav_max_drawdown_pct,4,57,61,7
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_daily_dca.csv,BTCUSDT,entry_scale=0.4,7068301.762964328,56.60897812988989,strategy_nav_max_drawdown_pct,5,38,43,5
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_daily_dca.csv,BTCUSDT,entry_scale=0.3,4638959.640444471,44.28905479872572,strategy_nav_max_drawdown_pct,6,16,22,3
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_daily_dca.csv,BTCUSDT,entry_scale=0.2,3091849.198221888,30.695839883559817,strategy_nav_max_drawdown_pct,7,3,10,1
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_monthly_dca.csv,BTCUSDT,entry_scale=0.8,1260318.7942949708,92.3957500783378,strategy_nav_max_drawdown_pct,8,119,127,76
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_monthly_dca.csv,BTCUSDT,entry_scale=0.7,866951.8324303535,85.49343245555234,strategy_nav_max_drawdown_pct,9,112,121,60
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_monthly_dca.csv,BTCUSDT,entry_scale=0.6,578598.3725514709,77.21125199004683,strategy_nav_max_drawdown_pct,10,99,109,48
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_monthly_dca.csv,BTCUSDT,entry_scale=0.5,378205.7350375118,67.55446668872351,strategy_nav_max_drawdown_pct,11,56,67,8
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_monthly_dca.csv,BTCUSDT,entry_scale=0.4,244742.8439567605,56.54039473615542,strategy_nav_max_drawdown_pct,12,37,49,6
+15,15_backtest_btcusdt_best_hyst_fixed5x_scale_sweep.csv,BTCUSDT,scale_label=0.8 ; entry_scale=0.8,185573.80384483183,92.51665192883247,max_drawdown_pct,13,121,134,86
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_monthly_dca.csv,BTCUSDT,entry_scale=0.3,158739.42237430468,44.203705990055234,strategy_nav_max_drawdown_pct,14,15,29,4
+15,15_backtest_btcusdt_best_hyst_fixed5x_scale_sweep.csv,BTCUSDT,scale_label=0.7 ; entry_scale=0.7,116790.76378184768,85.64960237152191,max_drawdown_pct,15,114,129,78
+22,22_backtest_btcusdt_dd_scale_entryscale_sweep.csv,BTCUSDT,mode=baseline_es0.8 ; entry_scale=0.8,107144.65127342864,92.63490395335384,max_drawdown_pct,16,122,138,92
+16,16_backtest_btcusdt_best_hyst_fixed5x_scale_monthly_dca.csv,BTCUSDT,entry_scale=0.2,104594.43564941388,30.603480915334003,strategy_nav_max_drawdown_pct,17,2,19,2
+22,22_backtest_btcusdt_dd_scale_entryscale_sweep.csv,BTCUSDT,mode=baseline_es0.7 ; entry_scale=0.7,72266.63708726614,85.84874419091565,max_drawdown_pct,18,115,133,85
+15,15_backtest_btcusdt_best_hyst_fixed5x_scale_sweep.csv,BTCUSDT,scale_label=0.6 ; entry_scale=0.6,69610.37567463242,77.41414772509636,max_drawdown_pct,19,101,120,59
+22,22_backtest_btcusdt_dd_scale_entryscale_sweep.csv,BTCUSDT,mode=baseline_es0.6 ; entry_scale=0.6,46144.27680148026,77.68376146578372,max_drawdown_pct,20,102,122,62
+8,08_backtest_btcusdt_hysteresis_sweep.csv,BTCUSDT,mode=hyst_0.50pct ; band_label=0.50%,39367.8799229618,67.81498388466947,max_drawdown_pct,21,58,79,11
+14,14_backtest_btcusdt_best_hyst_fixed5x_sl_sweep.csv,BTCUSDT,sl_label=3.00%,39367.8799229618,67.81498388466947,max_drawdown_pct,21,58,79,11
+15,15_backtest_btcusdt_best_hyst_fixed5x_scale_sweep.csv,BTCUSDT,scale_label=0.5 ; entry_scale=0.5,39367.8799229618,67.81498388466947,max_drawdown_pct,21,58,79,11
+9,09_backtest_btcusdt_triple_compare.csv,BTCUSDT,strategy=08_best_hysteresis_fixed5x,39367.8799229618,67.81498388466949,max_drawdown_pct,21,61,82,15
+8,08_backtest_btcusdt_hysteresis_sweep.csv,BTCUSDT,mode=hyst_0.30pct ; band_label=0.30%,35583.45621163944,70.23386889208967,max_drawdown_pct,25,77,102,35
+17,17_backtest_btcusdt_hysteresis_sweep_nolookahead_raw.csv,BTCUSDT,mode=hyst_0.50pct ; band_label=0.50%,27950.29873271394,68.13628282936308,max_drawdown_pct,26,63,89,21
+18,18_backtest_btcusdt_hys05_longsl_compare.csv,BTCUSDT,mode=case_17_baseline ; long_sl_enabled=on,27950.29873271394,68.13628282936308,max_drawdown_pct,26,63,89,21
+20,20_backtest_btcusdt_hys05_diagnostics_metrics.csv,BTCUSDT,row_1,27950.29873271394,68.13628282936308,max_drawdown_pct,26,63,89,21
+21,21_backtest_btcusdt_dd_scale_compare.csv,BTCUSDT,mode=baseline_hys05,27950.29873271394,68.13628282936308,max_drawdown_pct,26,63,89,21
+22,22_backtest_btcusdt_dd_scale_entryscale_sweep.csv,BTCUSDT,mode=baseline_es0.5 ; entry_scale=0.5,27950.29873271394,68.13628282936308,max_drawdown_pct,26,63,89,21
+7,07_backtest_btcusdt_fixed5x_hysteresis_compare.csv,BTCUSDT,mode=hedge_fixed_base5x_plus_4h_hysteresis,27843.52159290413,72.61464015930444,max_drawdown_pct,31,92,123,65
+8,08_backtest_btcusdt_hysteresis_sweep.csv,BTCUSDT,mode=hyst_0.20pct ; band_label=0.20%,27843.52159290413,72.61464015930444,max_drawdown_pct,31,92,123,65
+17,17_backtest_btcusdt_hysteresis_sweep_nolookahead_raw.csv,BTCUSDT,mode=hyst_0.30pct ; band_label=0.30%,25143.76698844041,70.5310204137268,max_drawdown_pct,33,79,112,51
+8,08_backtest_btcusdt_hysteresis_sweep.csv,BTCUSDT,mode=hyst_0.10pct ; band_label=0.10%,24428.7895616774,70.72360890950779,max_drawdown_pct,34,80,114,52
+22,22_backtest_btcusdt_dd_scale_entryscale_sweep.csv,BTCUSDT,mode=dd_scaled_es0.7 ; entry_scale=0.7,24198.35819286421,71.57534097123701,max_drawdown_pct,35,82,117,56
+22,22_backtest_btcusdt_dd_scale_entryscale_sweep.csv,BTCUSDT,mode=dd_scaled_es0.8 ; entry_scale=0.8,24145.87240809465,81.50777392937609,max_drawdown_pct,36,104,140,93
+19,19_backtest_btcusdt_touch_window_next_open_sweep.csv,BTCUSDT,mode=touch_last_1_4h ; touch_window=1,23033.216080175054,69.08194056433634,max_drawdown_pct,37,71,108,46
+19,19_backtest_btcusdt_touch_window_next_open_sweep.csv,BTCUSDT,mode=touch_last_2_4h ; touch_window=2,21465.96083750666,68.95190786598391,max_drawdown_pct,38,69,107,40
+19,19_backtest_btcusdt_touch_window_next_open_sweep.csv,BTCUSDT,mode=touch_last_3_4h ; touch_window=3,21271.547732366955,69.04903243340333,max_drawdown_pct,39,70,109,48
+15,15_backtest_btcusdt_best_hyst_fixed5x_scale_sweep.csv,BTCUSDT,scale_label=0.4 ; entry_scale=0.4,21137.68615546548,56.86373123277352,max_drawdown_pct,40,40,80,14
+4,04_backtest_btcusdt_modes_metrics.csv,BTCUSDT,mode=long_only_with_trend_short_hedge_5x,20964.07933359375,72.0597561685864,max_drawdown_pct,41,84,125,70
+5,05_backtest_btcusdt_reentry_compare_metrics.csv,BTCUSDT,mode=hedge_04_confirmed_4h,20964.07933359375,72.0597561685864,max_drawdown_pct,41,84,125,70
+6,06_backtest_btcusdt_hedge_size_hysteresis_compare.csv,BTCUSDT,mode=hedge_fixed_base5x_04,20964.07933359375,72.0597561685864,max_drawdown_pct,41,84,125,70
+7,07_backtest_btcusdt_fixed5x_hysteresis_compare.csv,BTCUSDT,mode=hedge_fixed_base5x_04,20964.07933359375,72.0597561685864,max_drawdown_pct,41,84,125,70
+8,08_backtest_btcusdt_hysteresis_sweep.csv,BTCUSDT,mode=hyst_0.00pct ; band_label=0.00%,20964.07933359375,72.0597561685864,max_drawdown_pct,41,84,125,70
+9,09_backtest_btcusdt_triple_compare.csv,BTCUSDT,strategy=04_long_only_with_trend_short_hedge_5x,20964.07933359375,72.05975616858642,max_drawdown_pct,41,89,130,81
+21,21_backtest_btcusdt_dd_scale_compare.csv,BTCUSDT,mode=dd_scaled_hys05,19794.632565686763,57.46228414034953,max_drawdown_pct,47,42,89,21
+17,17_backtest_btcusdt_hysteresis_sweep_nolookahead_raw.csv,BTCUSDT,mode=hyst_0.20pct ; band_label=0.20%,19650.44523703989,72.88672486632613,max_drawdown_pct,48,95,143,96
+22,22_backtest_btcusdt_dd_scale_entryscale_sweep.csv,BTCUSDT,mode=dd_scaled_es0.6 ; entry_scale=0.6,19293.757258276462,61.57133550360976,max_drawdown_pct,49,45,94,31
+19,19_backtest_btcusdt_touch_window_next_open_sweep.csv,BTCUSDT,mode=touch_last_4_4h ; touch_window=4,18672.46933686021,69.31458366238735,max_drawdown_pct,50,74,124,68
+4,04_backtest_btcusdt_modes_metrics.csv,BTCUSDT,mode=long_only_no_short,18237.81243830827,89.48315223018861,max_drawdown_pct,51,118,169,104
+19,19_backtest_btcusdt_touch_window_next_open_sweep.csv,BTCUSDT,mode=touch_last_5_4h ; touch_window=5,17826.220764341,69.11876582254291,max_drawdown_pct,52,72,124,68
+22,22_backtest_btcusdt_dd_scale_entryscale_sweep.csv,BTCUSDT,mode=dd_scaled_es0.5 ; entry_scale=0.5,17790.390405424907,51.49498110833981,max_drawdown_pct,53,24,77,10
+17,17_backtest_btcusdt_hysteresis_sweep_nolookahead_raw.csv,BTCUSDT,mode=hyst_0.10pct ; band_label=0.10%,17289.448489094088,71.01448178241671,max_drawdown_pct,54,81,135,89
+22,22_backtest_btcusdt_dd_scale_entryscale_sweep.csv,BTCUSDT,mode=baseline_es0.4 ; entry_scale=0.4,16070.59246114462,57.20943037925468,max_drawdown_pct,55,41,96,32
+19,19_backtest_btcusdt_touch_window_next_open_sweep.csv,BTCUSDT,mode=touch_last_6_4h ; touch_window=6,15753.85724634211,69.8055560241744,max_drawdown_pct,56,76,132,82
+2,002_backtest_btcusdt.md,BTCUSDT,single_run,14968.8275,64.0331,md_report_mdd,57,48,105,37
+3,03_backtest_btcusdt_scale_metrics.csv,BTCUSDT,entry_scale=0.5,14968.827497361495,64.03312645018887,max_drawdown_pct,58,49,107,40
+4,04_backtest_btcusdt_modes_metrics.csv,BTCUSDT,mode=baseline_02,14968.827497361495,64.03312645018887,max_drawdown_pct,58,49,107,40
+9,09_backtest_btcusdt_triple_compare.csv,BTCUSDT,strategy=02_baseline,14968.827497361495,64.03312645018887,max_drawdown_pct,58,49,107,40
+17,17_backtest_btcusdt_hysteresis_sweep_nolookahead_raw.csv,BTCUSDT,mode=hyst_0.00pct ; band_label=0.00%,14849.29162809572,72.33735387411974,max_drawdown_pct,61,90,151,100
+6,06_backtest_btcusdt_hedge_size_hysteresis_compare.csv,BTCUSDT,mode=hedge_dynamic_linked_plus_4h_hysteresis,14135.641554427342,72.61464015930453,max_drawdown_pct,62,94,156,101
+22,22_backtest_btcusdt_dd_scale_entryscale_sweep.csv,BTCUSDT,mode=dd_scaled_es0.4 ; entry_scale=0.4,12244.501536203152,42.57260555696213,max_drawdown_pct,63,12,75,9
+15,15_backtest_btcusdt_best_hyst_fixed5x_scale_sweep.csv,BTCUSDT,scale_label=0.3 ; entry_scale=0.3,10766.57794370915,44.57872323294422,max_drawdown_pct,64,18,82,15
+6,06_backtest_btcusdt_hedge_size_hysteresis_compare.csv,BTCUSDT,mode=hedge_dynamic_linked_to_long_qty,10586.602513303042,72.05975616858639,max_drawdown_pct,65,83,148,98
+3,03_backtest_btcusdt_scale_metrics.csv,BTCUSDT,entry_scale=0.4,10329.32923547925,54.020725480294416,max_drawdown_pct,66,34,100,33
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h0.00_tp0.80_sl4.00,9785.965573959744,51.72679457361726,max_drawdown_pct,67,25,92,29
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.40_tp0.80_sl4.00,9785.965573959744,51.72679457361726,max_drawdown_pct,67,25,92,29
+14,14_backtest_btcusdt_best_hyst_fixed5x_sl_sweep.csv,BTCUSDT,sl_label=5.00%,9215.241729556,65.44052871984073,max_drawdown_pct,69,53,122,62
+22,22_backtest_btcusdt_dd_scale_entryscale_sweep.csv,BTCUSDT,mode=baseline_es0.3 ; entry_scale=0.3,8765.012017335306,44.91298284728209,max_drawdown_pct,70,19,89,21
+22,22_backtest_btcusdt_dd_scale_entryscale_sweep.csv,BTCUSDT,mode=dd_scaled_es0.3 ; entry_scale=0.3,8765.012017335306,44.91298284728209,max_drawdown_pct,70,19,89,21
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h0.50_tp0.80_sl4.00,7389.201177840002,67.97238194587597,max_drawdown_pct,72,62,134,86
+5,05_backtest_btcusdt_reentry_compare_metrics.csv,BTCUSDT,mode=hedge_04_plus_infinite_stop_reentry_hybrid_tp,6860.205682294042,75.30187505314132,max_drawdown_pct,73,98,171,105
+3,03_backtest_btcusdt_scale_metrics.csv,BTCUSDT,entry_scale=0.3,6505.156294776667,42.57609183431293,max_drawdown_pct,74,13,87,20
+1,001_backtest_btcusdt.md,BTCUSDT,single_run,6041.7178,40.7136,md_report_mdd,75,9,84,18
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.30_tp0.80_sl4.00,5906.51826980534,39.42868539214774,max_drawdown_pct,76,7,83,17
+13,13_backtest_ethusdt_best_hyst_fixed5x_sl_sweep.csv,ETHUSDT,sl_label=6.00%,5765.836652967571,84.40793265115364,max_drawdown_pct,77,108,185,108
+10,10_backtest_ethusdt_triple_compare.csv,ETHUSDT,strategy=02_baseline,5670.031997303158,65.92468194105504,max_drawdown_pct,78,54,132,82
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h1.00_tp0.80_sl4.00,5668.5441541022765,56.02671871252942,max_drawdown_pct,79,36,115,53
+18,18_backtest_btcusdt_hys05_longsl_compare.csv,BTCUSDT,mode=case_no_long_sl ; long_sl_enabled=off,5623.931600552882,65.18639989906943,max_drawdown_pct,80,52,132,82
+15,15_backtest_btcusdt_best_hyst_fixed5x_scale_sweep.csv,BTCUSDT,scale_label=0.2 ; entry_scale=0.2,5189.960860351712,30.984767227319026,max_drawdown_pct,81,4,85,19
+10,10_backtest_ethusdt_triple_compare.csv,ETHUSDT,strategy=04_long_only_with_trend_short_hedge_5x,5129.801678896252,62.98750412173855,max_drawdown_pct,82,47,129,78
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h0.00_tp0.80_sl2.00,4949.691446300471,52.947852774645824,max_drawdown_pct,83,28,111,50
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.40_tp0.60_sl4.00,4877.211941071734,51.06017878596665,max_drawdown_pct,84,23,107,40
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.40_tp0.80_sl8.00,4853.416001874623,50.54188109845133,max_drawdown_pct,85,21,106,39
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h0.00_tp1.60_sl2.00,4840.295390650857,50.74209128789613,max_drawdown_pct,86,22,108,46
+13,13_backtest_ethusdt_best_hyst_fixed5x_sl_sweep.csv,ETHUSDT,sl_label=4.00%,4803.439836162247,84.73069546667902,max_drawdown_pct,87,110,197,113
+14,14_backtest_btcusdt_best_hyst_fixed5x_sl_sweep.csv,BTCUSDT,sl_label=2.00%,4773.352726665897,62.90308047878542,max_drawdown_pct,88,46,134,86
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h0.00_tp1.60_sl4.00,4384.137534711459,53.8026852913497,max_drawdown_pct,89,30,119,57
+13,13_backtest_ethusdt_best_hyst_fixed5x_sl_sweep.csv,ETHUSDT,sl_label=2.00%,4124.041866980474,86.61393291788352,max_drawdown_pct,90,116,206,117
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.40_tp0.80_sl6.00,4084.999370617412,53.89553542397242,max_drawdown_pct,91,32,123,65
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.40_tp0.60_sl6.00,3947.072386609095,55.98294158783919,max_drawdown_pct,92,35,127,76
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h0.50_tp0.80_sl2.00,3933.427150940604,68.76580326817029,max_drawdown_pct,93,68,161,102
+14,14_backtest_btcusdt_best_hyst_fixed5x_sl_sweep.csv,BTCUSDT,sl_label=6.00%,3875.196384030435,75.18318343144864,max_drawdown_pct,94,97,191,110
+13,13_backtest_ethusdt_best_hyst_fixed5x_sl_sweep.csv,ETHUSDT,sl_label=5.00%,3861.5420371911546,84.61753461294253,max_drawdown_pct,95,109,204,116
+10,10_backtest_ethusdt_triple_compare.csv,ETHUSDT,strategy=08_best_hysteresis_fixed5x,3839.69606098396,83.76885882186514,max_drawdown_pct,96,106,202,114
+13,13_backtest_ethusdt_best_hyst_fixed5x_sl_sweep.csv,ETHUSDT,sl_label=3.00%,3839.69606098396,83.76885882186514,max_drawdown_pct,96,106,202,114
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h0.50_tp1.60_sl2.00,3791.207650057265,69.53852945915801,max_drawdown_pct,98,75,173,107
+3,03_backtest_btcusdt_scale_metrics.csv,BTCUSDT,entry_scale=0.2,3764.9373979292286,29.71694049945171,max_drawdown_pct,99,1,100,33
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.30_tp0.80_sl8.00,3521.311375265212,37.9097472718732,max_drawdown_pct,100,5,105,37
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.30_tp0.60_sl4.00,3423.6097449490217,39.23224981134028,max_drawdown_pct,101,6,107,40
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h0.50_tp1.60_sl4.00,3369.812242317976,72.53032876262016,max_drawdown_pct,102,91,193,111
+14,14_backtest_btcusdt_best_hyst_fixed5x_sl_sweep.csv,BTCUSDT,sl_label=4.00%,3365.614599477464,53.99641942140276,max_drawdown_pct,103,33,136,91
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.40_tp0.60_sl8.00,3062.527958935622,56.62460898081403,max_drawdown_pct,104,39,143,96
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.30_tp0.60_sl6.00,3056.167258222512,43.677749400997655,max_drawdown_pct,105,14,119,57
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.30_tp0.80_sl6.00,3006.043893688283,41.594464650742005,max_drawdown_pct,106,10,116,55
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h1.00_tp0.80_sl2.00,2896.6168906058274,57.538173880576174,max_drawdown_pct,107,43,150,99
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.40_tp0.80_sl5.00,2818.759954331541,52.27462302574676,max_drawdown_pct,108,27,135,89
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h1.00_tp1.60_sl2.00,2788.568827550594,70.28198990770183,max_drawdown_pct,109,78,187,109
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.40_tp0.60_sl5.00,2621.8562328861344,53.849030099891074,max_drawdown_pct,110,31,141,95
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h2.00_tp0.80_sl4.00,2606.465170621126,53.76469191950618,max_drawdown_pct,111,29,140,93
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.30_tp0.60_sl8.00,2510.7432710242524,44.30052320156653,max_drawdown_pct,112,17,129,78
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h1.00_tp1.60_sl4.00,2504.478197158651,73.2710681563531,max_drawdown_pct,113,96,209,118
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.30_tp0.80_sl5.00,2295.8913040185025,40.497025418159474,max_drawdown_pct,114,8,122,62
+12,12_backtest_ethusdt_scale_tpsl_sweep.csv,ETHUSDT,s0.30_tp0.60_sl5.00,2173.304987594068,41.93341069501412,max_drawdown_pct,115,11,126,75
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h3.00_tp0.80_sl4.00,1658.25851889887,66.564138262969,max_drawdown_pct,116,55,171,105
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h2.00_tp0.80_sl2.00,1386.5987606826482,57.81078140957791,max_drawdown_pct,117,44,161,102
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h2.00_tp1.60_sl2.00,1208.000525492539,80.48505593809944,max_drawdown_pct,118,103,221,119
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h2.00_tp1.60_sl4.00,1054.4197039394987,83.43679110822922,max_drawdown_pct,119,105,224,120
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h3.00_tp0.80_sl2.00,990.8459971018842,69.17548879692121,max_drawdown_pct,120,73,193,111
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h3.00_tp1.60_sl2.00,794.1057549229246,85.08506845601997,max_drawdown_pct,121,111,232,121
+11,11_backtest_ethusdt_hyst_tpsl_sweep.csv,ETHUSDT,h3.00_tp1.60_sl4.00,734.0136842233914,88.01996764487271,max_drawdown_pct,122,117,239,122
