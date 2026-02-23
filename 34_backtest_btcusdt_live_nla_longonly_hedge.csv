@@ -1,0 +1,2 @@
+study,symbol,initial_capital,entry_scale,final_equity,total_return_pct,cagr_pct,max_drawdown_pct,calmar_ratio,trades,long_trades,short_trades,win_rate_pct,profit_factor,touch_bars,entry_window_bars,reverse_events,stop_loss_events,reentry_events,hedge_open_events,hedge_close_events
+34_backtest_btcusdt_live_nla_longonly_hedge,BTCUSDT,1000.0,0.5,3459.545222144321,245.9545222144321,35.231031567843196,62.152333119507894,0.5668497029725366,493,364,129,78.09330628803245,1.9543800747161837,162310,2000372,0,47,23,129,129

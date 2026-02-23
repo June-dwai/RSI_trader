@@ -1,6 +1,7 @@
 pandas
 numpy
 binance-connector
+python-binance
 python-dotenv
 loguru
 matplotlib

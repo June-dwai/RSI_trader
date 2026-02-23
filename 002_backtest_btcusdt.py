@@ -4,7 +4,6 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 
 
 SYMBOL = "BTCUSDT"
@@ -197,11 +196,13 @@ class RSIAveragingBacktestStandalone:
         out_1m["adx"] = self.calculate_adx(out_1m, period=14)
 
         out_4h["ema200"] = out_4h["close"].ewm(span=200, adjust=False).mean().shift(1)
-        out_4h["ema_touch"] = (out_4h["high"] >= out_4h["ema200"]) & (out_4h["low"] <= out_4h["ema200"])
+        out_4h["ema_touch_raw"] = (out_4h["high"] >= out_4h["ema200"]) & (out_4h["low"] <= out_4h["ema200"])
+        # No look-ahead: current 4h bucket uses previous closed 4h touch state.
+        out_4h["ema_touch_confirmed"] = out_4h["ema_touch_raw"].shift(1).fillna(False)
 
         out_1m["timestamp_4h"] = out_1m.index.floor("4h")
         out_1m = out_1m.merge(
-            out_4h[["ema200", "ema_touch"]],
+            out_4h[["ema200", "ema_touch_confirmed"]],
             left_on="timestamp_4h",
             right_index=True,
             how="left",
@@ -209,7 +210,8 @@ class RSIAveragingBacktestStandalone:
         out_1m.drop("timestamp_4h", axis=1, inplace=True)
 
         out_1m["ema200"] = out_1m["ema200"].ffill()
-        out_1m["ema_touch"] = out_1m["ema_touch"].ffill().fillna(False)
+        out_1m["ema_touch"] = out_1m["ema_touch_confirmed"].ffill().fillna(False)
+        out_1m.drop("ema_touch_confirmed", axis=1, inplace=True)
         out_1m["trend"] = np.where(out_1m["close"] > out_1m["ema200"], "bullish", "bearish")
 
         for i in range(200, len(out_1m)):
@@ -634,69 +636,9 @@ def summarize(bt: RSIAveragingBacktestStandalone) -> dict[str, float]:
     }
 
 
-def save_backtest_plot(bt: RSIAveragingBacktestStandalone, filename: str = "002_backtest_btcusdt.png") -> None:
-    eq = pd.DataFrame(bt.equity_curve)
-    tr = pd.DataFrame(bt.trades)
-
-    if eq.empty:
-        return
-
-    fig, axes = plt.subplots(2, 1, figsize=(12, 10), sharex=True, gridspec_kw={"height_ratios": [2, 1]})
-
-    axes[0].plot(eq["timestamp"], eq["equity"], label="Equity", linewidth=1.1)
-    axes[0].set_title("Backtest RSI Averaging - Equity")
-    axes[0].set_ylabel("Equity (USDT)")
-    axes[0].legend(loc="upper left")
-
-    if "ema200" in eq.columns:
-        axes[1].plot(eq["timestamp"], eq["ema200"], label="4h EMA200", color="#d95f02", linewidth=1.0)
-
-    if not tr.empty:
-        longs = tr[tr["side"] == "LONG"]
-        shorts = tr[tr["side"] == "SHORT"]
-        if not longs.empty:
-            axes[1].scatter(
-                longs["entry_time"],
-                longs["avg_entry"],
-                s=24,
-                alpha=0.95,
-                label="LONG entry",
-                marker="^",
-                color="#1b9e77",
-                edgecolors="#0a3d2a",
-                linewidths=1.0,
-                zorder=5,
-            )
-        if not shorts.empty:
-            axes[1].scatter(
-                shorts["entry_time"],
-                shorts["avg_entry"],
-                s=24,
-                alpha=0.95,
-                label="SHORT entry",
-                marker="v",
-                color="#d62728",
-                edgecolors="#5a1010",
-                linewidths=1.0,
-                zorder=5,
-            )
-
-    axes[1].set_title("4h EMA200 and Entries")
-    axes[1].set_ylabel("Price (USDT)")
-    axes[1].set_xlabel("Time")
-    axes[1].legend(loc="upper left")
-
-    axes[0].grid(True, alpha=0.2)
-    axes[1].grid(True, alpha=0.2)
-    plt.tight_layout()
-    plt.savefig(filename, dpi=300, bbox_inches="tight")
-    plt.close()
-
-
 def main():
     bt = run_baseline_ema200()
     metrics = summarize(bt)
-    save_backtest_plot(bt, filename="002_backtest_btcusdt.png")
 
     print(f"symbol={SYMBOL}")
     print(f"period={metrics['period_start']} ~ {metrics['period_end']}")

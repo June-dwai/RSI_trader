@@ -1,0 +1,4 @@
+variant,baseline_entry,baseline_exit,baseline_duration_days,baseline_num_entries,baseline_pnl,baseline_reason,overlap_long_trades,overlap_total_pnl,overlap_max_duration_days,overlap_mean_duration_days,relief_events_in_window,relief_applied_usd_in_window,relief_avg_bep_drop,relief_max_bep_drop
+baseline,2025-10-06 17:36:00,2026-02-12,128.26666666666668,5,-54464.15660303417,Final Close,1,-54464.15660303417,128.26666666666668,128.26666666666668,0,0.0,,
+baseline_plus_hedge6x,2025-10-06 17:36:00,2026-02-12,128.26666666666668,5,-54464.15660303417,Final Close,1,-37767.52226879449,128.26666666666668,128.26666666666668,0,0.0,,
+baseline_plus_debtrelief_hedge6x,2025-10-06 17:36:00,2026-02-12,128.26666666666668,5,-54464.15660303417,Final Close,1,-32927.633296118736,128.26666666666668,128.26666666666668,1,15375.012973399607,25161.86597839136,25161.86597839136

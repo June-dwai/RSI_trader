@@ -19,3 +19,5 @@ historical_data_mainnet/
 *.pkl
 state.json
 .tmp_*
+live_rsi_bot.py
+live_rsi_bot_2.py

@@ -1,0 +1,2 @@
+entry_time,exit_time,side,avg_entry,exit_price,quantity,num_entries,pnl,return_pct,reason
+2024-12-17 15:11:00,2025-01-17 15:05:00,LONG,102373.168,103764.2,9.485961673357776,5,12090.16185524348,1209.0161855243482,Take Profit

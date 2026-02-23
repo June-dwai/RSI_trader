@@ -193,7 +193,9 @@ def build_mode_classes(base_module):
             out_1m["adx"] = self.calculate_adx(out_1m, period=14)
 
             out_4h["ema200"] = out_4h["close"].ewm(span=200, adjust=False).mean().shift(1)
-            out_4h["ema_touch"] = (out_4h["high"] >= out_4h["ema200"]) & (out_4h["low"] <= out_4h["ema200"])
+            out_4h["ema_touch_raw"] = (out_4h["high"] >= out_4h["ema200"]) & (out_4h["low"] <= out_4h["ema200"])
+            # No look-ahead: current 4h bucket uses previous closed 4h touch state.
+            out_4h["ema_touch_confirmed"] = out_4h["ema_touch_raw"].shift(1).fillna(False)
             out_4h["trend_4h"] = np.where(out_4h["close"] > out_4h["ema200"], "bullish", "bearish")
             out_4h.loc[out_4h["ema200"].isna(), "trend_4h"] = np.nan
             # No look-ahead: use previous closed 4h trend for current 4h bucket.
@@ -202,14 +204,15 @@ def build_mode_classes(base_module):
             out_1m["timestamp_4h"] = out_1m.index.floor("4h")
             out_1m["is_new_4h_bucket"] = out_1m["timestamp_4h"] != out_1m["timestamp_4h"].shift(1)
             out_1m = out_1m.merge(
-                out_4h[["ema200", "ema_touch", "trend_4h_confirmed"]],
+                out_4h[["ema200", "ema_touch_confirmed", "trend_4h_confirmed"]],
                 left_on="timestamp_4h",
                 right_index=True,
                 how="left",
             )
             out_1m.drop("timestamp_4h", axis=1, inplace=True)
             out_1m["ema200"] = out_1m["ema200"].ffill()
-            out_1m["ema_touch"] = out_1m["ema_touch"].ffill().fillna(False)
+            out_1m["ema_touch"] = out_1m["ema_touch_confirmed"].ffill().fillna(False)
+            out_1m.drop("ema_touch_confirmed", axis=1, inplace=True)
             out_1m["trend"] = np.where(out_1m["close"] > out_1m["ema200"], "bullish", "bearish")
 
             for i in range(200, len(out_1m)):
@@ -431,6 +434,7 @@ def save_markdown(metrics_df: pd.DataFrame, filename: Path) -> None:
     lines.append("- `long_only_no_short`: strategy short entry disabled")
     lines.append("- `long_only_with_trend_short_hedge_5x`:")
     lines.append("  - strategy remains long-only")
+    lines.append("  - ema-touch gate uses previous closed 4h touch state (`ema_touch_confirmed = ema_touch_raw.shift(1)`)")
     lines.append("  - hedge trend confirmation uses closed 4h candles only")
     lines.append("  - current 4h bucket uses previous closed 4h trend (`trend_4h_confirmed = trend_4h.shift(1)`) to avoid look-ahead")
     lines.append("  - open hedge short when confirmed 4h trend is bearish")
