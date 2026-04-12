@@ -1,0 +1,65 @@
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © horrrrong — Support/Resistance (avg of 1m EMA20 & TF EMA2000) ± ATR
+//@version=6
+indicator("Support and Resistance — horrrrong", overlay=true, max_bars_back=5000)
+
+// ── Inputs ──
+fast_len = input.int(20,   "Fast EMA length (fixed 1m)", minval=1)
+slow_len = input.int(1800, "Slow EMA length (all TFs)",  minval=1)
+
+atr_len  = input.int(14,   "ATR length (1m)", minval=1)
+k_w      = input.float(1.0, "k for WHITE  (avg − k·ATR)", step=0.1)
+k_r      = input.float(1.0, "k for RED    (avg − k·ATR)", step=0.1)
+k_y      = input.float(1.0, "k for YELLOW (avg − k·ATR)", step=0.1)
+k_g      = input.float(1.0, "k for GREEN  (avg − k·ATR)", step=0.1)
+k_b      = input.float(1.0, "k for BLUE   (avg − k·ATR)", step=0.1)
+
+
+// 항상 일반 캔들 기준(HA 차트여도 원시 캔들 사용)
+var string BASE = ticker.new(syminfo.prefix, syminfo.ticker)
+
+// ── 1m fast EMA(20) ──
+ema_fast_1m = request.security(BASE, "1", ta.ema(close, fast_len), barmerge.gaps_off, barmerge.lookahead_off)
+
+// ── TF별 slow EMA(2000) ──
+ema_slow_1m  = request.security(BASE,  "1", ta.ema(close, slow_len), barmerge.gaps_off, barmerge.lookahead_off)
+ema_slow_3m  = request.security(BASE,  "2", ta.ema(close, slow_len), barmerge.gaps_off, barmerge.lookahead_off)
+ema_slow_5m  = request.security(BASE,  "3", ta.ema(close, slow_len), barmerge.gaps_off, barmerge.lookahead_off)
+ema_slow_10m = request.security(BASE, "5", ta.ema(close, slow_len), barmerge.gaps_off, barmerge.lookahead_off)
+
+// ── avg(1m EMA20, TF EMA2000) ──
+avg_1m  = (ema_fast_1m + ema_slow_1m)  * 0.5   // WHITE
+avg_3m  = (ema_fast_1m + ema_slow_3m)  * 0.5   // RED
+avg_5m  = (ema_fast_1m + ema_slow_5m)  * 0.5   // YELLOW
+avg_10m = (ema_fast_1m + ema_slow_10m) * 0.5   // GREEN
+
+// ── 1m ATR ──
+atr1 = request.security(BASE, "1", ta.atr(atr_len), barmerge.gaps_off, barmerge.lookahead_off)
+
+// ── avg − k·ATR (색별 k) ──
+w_minus = avg_1m  - k_w * atr1
+r_minus = avg_3m  - k_r * atr1
+y_minus = avg_5m  - k_y * atr1
+g_minus = avg_10m - k_g * atr1
+
+// ── Plots (색 순서: 흰 → 빨강 → 노랑 → 초록 → 파랑) ──
+// WHITE (1m)
+plot(avg_1m,  color=color.new(color.white,  0), linewidth=2, title="WHITE  avg(EMA20[1m], EMA2000[1m])")
+plot(w_minus, color=color.new(color.white,  0), linewidth=2, title="WHITE  avg − k_w·ATR")
+// RED (3m)
+plot(avg_3m,  color=color.new(color.red,    0), linewidth=2, title="RED    avg(EMA20[1m], EMA2000[3m])")
+plot(r_minus, color=color.new(color.red,    0), linewidth=2, title="RED    avg − k_r·ATR")
+// YELLOW (5m)
+plot(avg_5m,  color=color.new(color.yellow, 0), linewidth=2, title="YELLOW avg(EMA20[1m], EMA2000[5m])")
+plot(y_minus, color=color.new(color.yellow, 0), linewidth=2, title="YELLOW avg − k_y·ATR")
+// GREEN (15m)
+plot(avg_10m, color=color.new(color.green,  0), linewidth=2, title="GREEN  avg(EMA20[1m], EMA2000[10m])")
+plot(g_minus, color=color.new(color.green,  0), linewidth=2, title="GREEN  avg − k_g·ATR")
+
+// ── (선택) 구성요소 보기 ──
+show_parts = input.bool(false, "Show component EMAs (debug)")
+plot(show_parts ? ema_fast_1m  : na, color=color.new(color.teal,   0), linewidth=1, title="EMA20 [1m]")
+plot(show_parts ? ema_slow_1m  : na, color=color.new(color.white,  0), linewidth=1, title="EMA2000 [1m]")
+plot(show_parts ? ema_slow_3m  : na, color=color.new(color.red,    0), linewidth=1, title="EMA2000 [3m]")
+plot(show_parts ? ema_slow_5m  : na, color=color.new(color.yellow, 0), linewidth=1, title="EMA2000 [5m]")
+plot(show_parts ? ema_slow_10m : na, color=color.new(color.green,  0), linewidth=1, title="EMA2000 [10m]")

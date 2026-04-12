@@ -1,0 +1,6 @@
+﻿final_equity,total_return_pct,cagr_pct,max_drawdown_pct,calmar_ratio,variant,short_rsi_overbought,allow_short_reverse_on_prev_touch,fix_stop_rearm,bearish_flip_trim_frac,trades,reverse_events,stop_loss_events,reentry_events,trend_flip_trim_events,return_2026_pct,mdd_2026_pct,equity_at_2021_05_19_1250,first_zero_ts,survived_2021_05_19
+0.0,-100.0,-100.0,100.0,-1.0,baseline_case2,85,False,False,0.0,472,9,86,31,0,,,0.0,2021-05-19 12:50:00,False
+0.0,-100.0,-100.0,100.0,-1.0,short_rsi80,80,False,False,0.0,521,10,92,35,0,,,2953.8483960840917,2021-05-26 02:20:00,True
+0.0,-100.0,-100.0,100.0,-1.0,short_rsi80_reverse_nogate,80,True,False,0.0,522,10,92,35,0,,,2804.501629318348,2021-05-26 02:20:00,True
+1.1832454155214458,-99.88167545844786,-72.123461518554,99.91831826385726,-0.7218242137352175,short_rsi80_reverse_nogate_stopfix,80,True,True,0.0,3608,235,1005,338,0,-42.7800037216817,70.80101325968387,433.76433752240916,,True
+1.212343821470965,-99.8787656178529,-71.99480204946734,99.91258021191302,-0.7205779482100001,short_rsi80_reverse_nogate_stopfix_trim80,80,True,True,0.8,3712,128,983,301,331,-45.80935721684508,70.42589967049425,390.4960327708413,,True
